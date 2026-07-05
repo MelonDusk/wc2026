@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --bg-deep: #0d0d0d;
+  --gold: #d4af37;
+}
+
+html,
+body {
+  background: var(--bg-deep);
+  color: #f5f5f0;
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Skeleton loader */
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.12; }
+}
+.skeleton-line {
+  animation: pulse-line 1.4s ease-in-out infinite;
+  background: #3a3a3a;
+  border-radius: 4px;
+}
+
+/* Indicateur LIVE */
+@keyframes live-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.live-dot { animation: live-blink 1.2s ease-in-out infinite; }

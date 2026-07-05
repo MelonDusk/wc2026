@@ -1,0 +1,1001 @@
+[
+ {
+  "fixture": {
+   "id": 1001,
+   "date": "2026-06-28T16:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 2,
+    "name": "France",
+    "winner": true
+   },
+   "away": {
+    "id": 13,
+    "name": "Sénégal",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 2,
+   "away": 0
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1002,
+   "date": "2026-06-28T17:00:00+00:00",
+   "status": {
+    "short": "PEN",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 9,
+    "name": "Espagne",
+    "winner": true
+   },
+   "away": {
+    "id": 7,
+    "name": "Uruguay",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 1,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": 4,
+    "away": 2
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1003,
+   "date": "2026-06-28T19:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 26,
+    "name": "Argentine",
+    "winner": true
+   },
+   "away": {
+    "id": 16,
+    "name": "Mexique",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 3,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1004,
+   "date": "2026-06-28T20:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 10,
+    "name": "Angleterre",
+    "winner": false
+   },
+   "away": {
+    "id": 12,
+    "name": "Japon",
+    "winner": true
+   }
+  },
+  "goals": {
+   "home": 0,
+   "away": 2
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1005,
+   "date": "2026-06-29T16:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 6,
+    "name": "Brésil",
+    "winner": true
+   },
+   "away": {
+    "id": 15,
+    "name": "Suisse",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 1,
+   "away": 0
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1006,
+   "date": "2026-06-29T17:00:00+00:00",
+   "status": {
+    "short": "PEN",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 27,
+    "name": "Portugal",
+    "winner": false
+   },
+   "away": {
+    "id": 17,
+    "name": "Corée du Sud",
+    "winner": true
+   }
+  },
+  "goals": {
+   "home": 2,
+   "away": 2
+  },
+  "score": {
+   "penalty": {
+    "home": 3,
+    "away": 4
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1007,
+   "date": "2026-06-29T19:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 25,
+    "name": "Allemagne",
+    "winner": true
+   },
+   "away": {
+    "id": 31,
+    "name": "Maroc",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 2,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1008,
+   "date": "2026-06-29T20:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 1118,
+    "name": "Pays-Bas",
+    "winner": false
+   },
+   "away": {
+    "id": 2384,
+    "name": "USA",
+    "winner": true
+   }
+  },
+  "goals": {
+   "home": 0,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1009,
+   "date": "2026-06-30T16:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 1,
+    "name": "Belgique",
+    "winner": true
+   },
+   "away": {
+    "id": 20,
+    "name": "Australie",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 4,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1010,
+   "date": "2026-06-30T17:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 3,
+    "name": "Croatie",
+    "winner": true
+   },
+   "away": {
+    "id": 5529,
+    "name": "Canada",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 1,
+   "away": 0
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1011,
+   "date": "2026-06-30T19:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 768,
+    "name": "Italie",
+    "winner": true
+   },
+   "away": {
+    "id": 2382,
+    "name": "Équateur",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 2,
+   "away": 0
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1012,
+   "date": "2026-06-30T20:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 8,
+    "name": "Colombie",
+    "winner": false
+   },
+   "away": {
+    "id": 21,
+    "name": "Danemark",
+    "winner": true
+   }
+  },
+  "goals": {
+   "home": 1,
+   "away": 2
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1013,
+   "date": "2026-06-31T16:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 1090,
+    "name": "Norvège",
+    "winner": true
+   },
+   "away": {
+    "id": 1504,
+    "name": "Ghana",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 3,
+   "away": 0
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1014,
+   "date": "2026-06-31T17:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 775,
+    "name": "Autriche",
+    "winner": true
+   },
+   "away": {
+    "id": 22,
+    "name": "Iran",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 2,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1015,
+   "date": "2026-06-31T19:00:00+00:00",
+   "status": {
+    "short": "PEN",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 1108,
+    "name": "Écosse",
+    "winner": true
+   },
+   "away": {
+    "id": 11,
+    "name": "Panama",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 0,
+   "away": 0
+  },
+  "score": {
+   "penalty": {
+    "home": 5,
+    "away": 4
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 1016,
+   "date": "2026-06-31T20:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 32"
+  },
+  "teams": {
+   "home": {
+    "id": 6824,
+    "name": "Uzbékistan",
+    "winner": false
+   },
+   "away": {
+    "id": 1548,
+    "name": "Jordanie",
+    "winner": true
+   }
+  },
+  "goals": {
+   "home": 1,
+   "away": 3
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 2001,
+   "date": "2026-07-04T18:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 16"
+  },
+  "teams": {
+   "home": {
+    "id": 2,
+    "name": "France",
+    "winner": true
+   },
+   "away": {
+    "id": 9,
+    "name": "Espagne",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 2,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 2002,
+   "date": "2026-07-04T18:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 16"
+  },
+  "teams": {
+   "home": {
+    "id": 26,
+    "name": "Argentine",
+    "winner": false
+   },
+   "away": {
+    "id": 12,
+    "name": "Japon",
+    "winner": true
+   }
+  },
+  "goals": {
+   "home": 0,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 2003,
+   "date": "2026-07-04T18:00:00+00:00",
+   "status": {
+    "short": "PEN",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 16"
+  },
+  "teams": {
+   "home": {
+    "id": 6,
+    "name": "Brésil",
+    "winner": true
+   },
+   "away": {
+    "id": 17,
+    "name": "Corée du Sud",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 1,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": 3,
+    "away": 1
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 2004,
+   "date": "2026-07-05T18:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 16"
+  },
+  "teams": {
+   "home": {
+    "id": 25,
+    "name": "Allemagne",
+    "winner": true
+   },
+   "away": {
+    "id": 2384,
+    "name": "USA",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 3,
+   "away": 2
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 2005,
+   "date": "2026-07-05T18:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 16"
+  },
+  "teams": {
+   "home": {
+    "id": 1,
+    "name": "Belgique",
+    "winner": true
+   },
+   "away": {
+    "id": 3,
+    "name": "Croatie",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 1,
+   "away": 0
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 2006,
+   "date": "2026-07-05T18:00:00+00:00",
+   "status": {
+    "short": "FT",
+    "elapsed": 90
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 16"
+  },
+  "teams": {
+   "home": {
+    "id": 768,
+    "name": "Italie",
+    "winner": true
+   },
+   "away": {
+    "id": 21,
+    "name": "Danemark",
+    "winner": false
+   }
+  },
+  "goals": {
+   "home": 2,
+   "away": 0
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 2007,
+   "date": "2026-07-05T19:00:00+00:00",
+   "status": {
+    "short": "2H",
+    "elapsed": 63
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 16"
+  },
+  "teams": {
+   "home": {
+    "id": 1090,
+    "name": "Norvège",
+    "winner": null
+   },
+   "away": {
+    "id": 775,
+    "name": "Autriche",
+    "winner": null
+   }
+  },
+  "goals": {
+   "home": 1,
+   "away": 1
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 2008,
+   "date": "2026-07-06T21:00:00+00:00",
+   "status": {
+    "short": "NS",
+    "elapsed": null
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Round of 16"
+  },
+  "teams": {
+   "home": {
+    "id": 1108,
+    "name": "Écosse",
+    "winner": null
+   },
+   "away": {
+    "id": 1548,
+    "name": "Jordanie",
+    "winner": null
+   }
+  },
+  "goals": {
+   "home": null,
+   "away": null
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 3001,
+   "date": "2026-07-9T20:00:00+00:00",
+   "status": {
+    "short": "NS",
+    "elapsed": null
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Quarter-finals"
+  },
+  "teams": {
+   "home": {
+    "id": 2,
+    "name": "France",
+    "winner": null
+   },
+   "away": {
+    "id": 12,
+    "name": "Japon",
+    "winner": null
+   }
+  },
+  "goals": {
+   "home": null,
+   "away": null
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 3002,
+   "date": "2026-07-10T20:00:00+00:00",
+   "status": {
+    "short": "NS",
+    "elapsed": null
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Quarter-finals"
+  },
+  "teams": {
+   "home": {
+    "id": 6,
+    "name": "Brésil",
+    "winner": null
+   },
+   "away": {
+    "id": 25,
+    "name": "Allemagne",
+    "winner": null
+   }
+  },
+  "goals": {
+   "home": null,
+   "away": null
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ },
+ {
+  "fixture": {
+   "id": 3003,
+   "date": "2026-07-11T20:00:00+00:00",
+   "status": {
+    "short": "NS",
+    "elapsed": null
+   }
+  },
+  "league": {
+   "id": 1,
+   "season": 2026,
+   "round": "Quarter-finals"
+  },
+  "teams": {
+   "home": {
+    "id": 1,
+    "name": "Belgique",
+    "winner": null
+   },
+   "away": {
+    "id": 768,
+    "name": "Italie",
+    "winner": null
+   }
+  },
+  "goals": {
+   "home": null,
+   "away": null
+  },
+  "score": {
+   "penalty": {
+    "home": null,
+    "away": null
+   }
+  }
+ }
+]
