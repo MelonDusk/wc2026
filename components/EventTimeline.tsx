@@ -3,15 +3,15 @@
 import { SlimEvent } from "@/lib/types";
 
 function eventIcon(e: SlimEvent): string {
-  if (e.detail === "Own Goal") return "⚽ (csc)";
-  if (e.detail === "Penalty") return "⚽ (pén.)";
+  if (e.detail === "Own Goal") return "⚽ (og)";
+  if (e.detail === "Penalty") return "⚽ (pen)";
   return "⚽";
 }
 
 /**
- * Timeline verticale des buts, triés par minute puis temps additionnel
- * (45 < 45+5 < 46). worldcup26.ir ne fournit que les buteurs —
- * pas de cartons ni de remplacements.
+ * Vertical timeline of goals, sorted by minute then added time
+ * (45 < 45+5 < 46). worldcup26.ir only provides scorers —
+ * no cards or substitutions.
  */
 export default function EventTimeline({ events }: { events: SlimEvent[] }) {
   const sorted = [...events].sort(
@@ -21,7 +21,7 @@ export default function EventTimeline({ events }: { events: SlimEvent[] }) {
   if (sorted.length === 0) {
     return (
       <p className="text-sm text-neutral-500 italic py-2">
-        Aucun buteur enregistré.
+        No goals recorded.
       </p>
     );
   }

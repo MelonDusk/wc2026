@@ -2,16 +2,16 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Coupe du Monde 2026 — Tableau final interactif",
+  title: "World Cup 2026 — Interactive Final Bracket",
   description:
-    "Le bracket radial de la Coupe du Monde 2026, mis à jour en direct : scores, buteurs, cartons, remplacements.",
+    "The World Cup 2026 radial bracket, updated live: scores, scorers, cards, substitutions.",
   openGraph: {
-    title: "Coupe du Monde 2026 — Tableau final interactif",
+    title: "World Cup 2026 — Interactive Final Bracket",
     description:
-      "Le tableau final sous forme de bracket radial, mis à jour avec les résultats réels du tournoi.",
+      "The final bracket as a radial diagram, updated with the tournament's real results.",
     images: ["/og.png"],
     type: "website",
-    locale: "fr_FR",
+    locale: "en_US",
   },
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

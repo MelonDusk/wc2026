@@ -9,8 +9,6 @@ interface TeamNodeProps {
   y: number;
   r: number;
   team: SlimTeam | null;
-  /** ex. "Winner Match 74" quand l'équipe n'est pas encore connue */
-  label: string | null;
   eliminated: boolean;
   live: boolean;
   clipId: string;
@@ -20,15 +18,18 @@ interface TeamNodeProps {
 /**
  * Vignette circulaire d'équipe.
  * - Équipe connue : drapeau rond plein bord (cover), bordure fine sombre.
- * - Équipe inconnue (team_id "0") : point neutre + label gris ("Winner Match 74").
- * - Éliminée : filtre grayscale. En train de jouer : point rouge LIVE.
+ * - Équipe inconnue (team_id "0") : simple point neutre, pas de texte —
+ *   le détail ("Winner Match X") vit dans le drawer, pas sur le bracket.
+ * - En couleur par défaut (pas encore jouée, ou qualifiée et toujours en
+ *   lice). Éliminée (a perdu un match déjà joué) : noir et blanc, sauf au
+ *   survol desktop qui révèle la couleur (cf. globals.css).
+ * - En train de jouer : point rouge LIVE (hors filtre grayscale).
  */
 export default function TeamNode({
   x,
   y,
   r,
   team,
-  label,
   eliminated,
   live,
   clipId,
@@ -36,27 +37,14 @@ export default function TeamNode({
 }: TeamNodeProps) {
   if (!team) {
     return (
-      <g>
-        <circle
-          cx={x}
-          cy={y}
-          r={r * 0.4}
-          fill="#222222"
-          stroke="#3a3a3a"
-          strokeWidth={1.5}
-        />
-        {label && (
-          <text
-            x={x}
-            y={y + r * 0.4 + 11}
-            textAnchor="middle"
-            fontSize={8.5}
-            fill="#6f6f6f"
-          >
-            {label}
-          </text>
-        )}
-      </g>
+      <circle
+        cx={x}
+        cy={y}
+        r={r * 0.4}
+        fill="#222222"
+        stroke="#3a3a3a"
+        strokeWidth={1.5}
+      />
     );
   }
 
@@ -67,7 +55,7 @@ export default function TeamNode({
     <a
       role="button"
       tabIndex={0}
-      aria-label={`Voir les matchs de ${team.name}`}
+      aria-label={`View matches for ${team.name}`}
       onClick={handleActivate}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -77,7 +65,7 @@ export default function TeamNode({
       }}
       style={{ cursor: "pointer" }}
     >
-      <g filter={eliminated ? "url(#grayscale)" : undefined}>
+      <g className={eliminated ? "team-node--eliminated" : undefined}>
         <defs>
           <clipPath id={clipId}>
             <circle cx={x} cy={y} r={r} />

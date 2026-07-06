@@ -29,3 +29,17 @@ body {
   50% { opacity: 0.35; }
 }
 .live-dot { animation: live-blink 1.2s ease-in-out infinite; }
+
+/* Pastilles du bracket : en couleur par défaut (équipe pas encore jouée,
+   ou qualifiée et toujours en lice). Une équipe ÉLIMINÉE (a perdu un match
+   déjà joué) passe en noir et blanc — et retrouve sa couleur au survol,
+   pour rester identifiable même hors course. Survol desktop uniquement. */
+.team-node--eliminated {
+  filter: grayscale(1);
+  transition: filter 250ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .team-node--eliminated:hover {
+    filter: grayscale(0);
+  }
+}

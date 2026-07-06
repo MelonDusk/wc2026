@@ -11,7 +11,7 @@ import { FixturesPayload, SlimFixture, SlimTeam, isLive } from "@/lib/types";
 import BracketRadial from "@/components/BracketRadial";
 import MatchDrawer from "@/components/MatchDrawer";
 
-const POLL_MS = 90_000; // polling uniquement si au moins un match est live
+const POLL_MS = 90_000; // only polls while at least one match is live
 
 export default function Home() {
   const [fixtures, setFixtures] = useState<SlimFixture[]>([]);
@@ -34,13 +34,13 @@ export default function Home() {
     }
   }, []);
 
-  // Le bracket s'affiche immédiatement avec le squelette statique ;
-  // les scores arrivent en hydratation progressive.
+  // The bracket renders immediately from the static skeleton;
+  // scores arrive via progressive hydration.
   useEffect(() => {
     fetchFixtures();
   }, [fetchFixtures]);
 
-  // Polling léger : seulement si un match est en cours
+  // Light polling: only while a match is in progress
   useEffect(() => {
     const timer = setInterval(() => {
       if (fixturesRef.current.some((f) => isLive(f.status))) {
@@ -60,17 +60,17 @@ export default function Home() {
     <main className="mx-auto max-w-5xl px-4 py-6 flex flex-col min-h-screen">
       <header className="text-center mb-4">
         <h1 className="text-2xl md:text-4xl font-bold tracking-tight">
-          Coupe du Monde <span className="text-[#d4af37]">2026</span>
+          World Cup <span className="text-[#d4af37]">2026</span>
         </h1>
         <p className="text-neutral-400 text-sm mt-1">
-          Tableau final — cliquez sur une équipe pour le détail de ses matchs
+          Final bracket — click a team for its match details
         </p>
         {stale && loaded && (
           <p
             role="status"
             className="inline-block mt-2 text-xs text-amber-300/90 bg-amber-950/40 border border-amber-800/40 rounded-full px-3 py-1"
           >
-            Données en cours de rafraîchissement…
+            Refreshing data…
           </p>
         )}
       </header>
@@ -83,33 +83,29 @@ export default function Home() {
         />
       </div>
 
-      <footer className="text-center text-xs text-neutral-500 py-6 space-x-1">
-        <span>
-          Design inspiré du travail d&apos;
-          {/* TODO : vérifier l'URL exacte du profil d'Emilio Sansolini avant mise en ligne */}
+      <footer className="text-center py-6">
+        <p className="text-sm text-neutral-400">
+          Design inspired by{" "}
           <a
             href="https://www.instagram.com/emiliosansolini/"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-neutral-300"
+            className="underline hover:text-neutral-200"
           >
             Emilio Sansolini
           </a>
-        </span>
-        <span>·</span>
-        <span>
-          Données{" "}
+        </p>
+        <p className="text-[11px] text-neutral-600 opacity-70 mt-1">
+          Data via{" "}
           <a
-            href="https://www.api-football.com"
+            href="https://github.com/rezarahiminia/worldcup2026"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-neutral-300"
+            className="underline hover:text-neutral-400"
           >
-            API-Football
+            rezarahiminia/worldcup2026
           </a>
-        </span>
-        <span>·</span>
-        <span>Fait avec Claude Code</span>
+        </p>
       </footer>
 
       {selectedTeam && (

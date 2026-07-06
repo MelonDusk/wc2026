@@ -7,18 +7,19 @@ const API_URL = "https://worldcup26.ir/get/games";
 
 /* ------------------------------------------------------------------ */
 /* Tours ancrés par id de match (mapping déterministe)                 */
-/*   73-88 Round of 32 · 89-96 Round of 16 · 97-100 quarts             */
-/*   101-102 demies · 103 petite finale · 104 finale                   */
+/*   1-72 phase de groupes · 73-88 Round of 32 · 89-96 Round of 16     */
+/*   97-100 quarts · 101-102 demies · 103 petite finale · 104 finale   */
 /* ------------------------------------------------------------------ */
 
 export function roundFromId(id: number): string | null {
+  if (id >= 1 && id <= 72) return "Group Stage";
   if (id >= 73 && id <= 88) return "Round of 32";
   if (id >= 89 && id <= 96) return "Round of 16";
   if (id >= 97 && id <= 100) return "Quarter-finals";
   if (id >= 101 && id <= 102) return "Semi-finals";
   if (id === 103) return "3rd Place Final";
   if (id === 104) return "Final";
-  return null; // phase de groupes : hors périmètre
+  return null;
 }
 
 /* ------------------------------------------------------------------ */
@@ -79,7 +80,7 @@ function teamOf(raw: any, side: "home" | "away"): SlimTeam | null {
   ]);
   return {
     id,
-    name: typeof name === "string" ? name : `Équipe ${id}`,
+    name: typeof name === "string" ? name : `Team ${id}`,
   };
 }
 

@@ -1,110 +1,8 @@
 {
   "rounds": [
     {
-      "name": "round_of_32",
-      "radius": 1.0,
-      "matches": [
-        {
-          "slot": 0,
-          "fixtureId": 73,
-          "angle": 11.25,
-          "feedsInto": "R16-0"
-        },
-        {
-          "slot": 1,
-          "fixtureId": 74,
-          "angle": 33.75,
-          "feedsInto": "R16-0"
-        },
-        {
-          "slot": 2,
-          "fixtureId": 75,
-          "angle": 56.25,
-          "feedsInto": "R16-1"
-        },
-        {
-          "slot": 3,
-          "fixtureId": 76,
-          "angle": 78.75,
-          "feedsInto": "R16-1"
-        },
-        {
-          "slot": 4,
-          "fixtureId": 77,
-          "angle": 101.25,
-          "feedsInto": "R16-2"
-        },
-        {
-          "slot": 5,
-          "fixtureId": 78,
-          "angle": 123.75,
-          "feedsInto": "R16-2"
-        },
-        {
-          "slot": 6,
-          "fixtureId": 79,
-          "angle": 146.25,
-          "feedsInto": "R16-3"
-        },
-        {
-          "slot": 7,
-          "fixtureId": 80,
-          "angle": 168.75,
-          "feedsInto": "R16-3"
-        },
-        {
-          "slot": 8,
-          "fixtureId": 81,
-          "angle": 191.25,
-          "feedsInto": "R16-4"
-        },
-        {
-          "slot": 9,
-          "fixtureId": 82,
-          "angle": 213.75,
-          "feedsInto": "R16-4"
-        },
-        {
-          "slot": 10,
-          "fixtureId": 83,
-          "angle": 236.25,
-          "feedsInto": "R16-5"
-        },
-        {
-          "slot": 11,
-          "fixtureId": 84,
-          "angle": 258.75,
-          "feedsInto": "R16-5"
-        },
-        {
-          "slot": 12,
-          "fixtureId": 85,
-          "angle": 281.25,
-          "feedsInto": "R16-6"
-        },
-        {
-          "slot": 13,
-          "fixtureId": 86,
-          "angle": 303.75,
-          "feedsInto": "R16-6"
-        },
-        {
-          "slot": 14,
-          "fixtureId": 87,
-          "angle": 326.25,
-          "feedsInto": "R16-7"
-        },
-        {
-          "slot": 15,
-          "fixtureId": 88,
-          "angle": 348.75,
-          "feedsInto": "R16-7"
-        }
-      ]
-    },
-    {
       "name": "round_of_16",
-      "radius": 0.78,
+      "radius": 1.0,
       "matches": [
         {
           "slot": 0,
@@ -120,25 +18,25 @@
         },
         {
           "slot": 2,
-          "fixtureId": 91,
+          "fixtureId": 93,
           "angle": 112.5,
           "feedsInto": "QF-1"
         },
         {
           "slot": 3,
-          "fixtureId": 92,
+          "fixtureId": 94,
           "angle": 157.5,
           "feedsInto": "QF-1"
         },
         {
           "slot": 4,
-          "fixtureId": 93,
+          "fixtureId": 91,
           "angle": 202.5,
           "feedsInto": "QF-2"
         },
         {
           "slot": 5,
-          "fixtureId": 94,
+          "fixtureId": 92,
           "angle": 247.5,
           "feedsInto": "QF-2"
         },
@@ -158,7 +56,7 @@
     },
     {
       "name": "quarter_finals",
-      "radius": 0.56,
+      "radius": 0.72,
       "matches": [
         {
           "slot": 0,
@@ -188,7 +86,7 @@
     },
     {
       "name": "semi_finals",
-      "radius": 0.36,
+      "radius": 0.44,
       "matches": [
         {
           "slot": 0,

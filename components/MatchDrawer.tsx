@@ -9,8 +9,9 @@ import {
   isFinished,
   isLive,
 } from "@/lib/types";
-import { ROUND_LABEL_FR } from "@/lib/bracket";
+import { ROUND_LABEL_EN } from "@/lib/bracket";
 import { formatStatus, formatKickoff, formatScoreWithPens, initials } from "@/lib/format";
+import { flagUrl } from "@/lib/flags";
 import EventTimeline from "./EventTimeline";
 
 interface MatchDrawerProps {
@@ -22,16 +23,17 @@ interface MatchDrawerProps {
 type EventsState = Record<number, SlimEvent[] | "loading">;
 
 /**
- * Détail des matchs d'une équipe.
- * Desktop (≥768px) : drawer latéral droit. Mobile : bottom sheet.
- * Fermeture : clic extérieur, Échap, bouton ×.
+ * A team's match details.
+ * Desktop (≥768px): right-side drawer. Mobile: bottom sheet.
+ * Closes on: outside click, Escape, × button.
  */
 export default function MatchDrawer({ team, fixtures, onClose }: MatchDrawerProps) {
   const [events, setEvents] = useState<EventsState>({});
+  const flag = flagUrl(team);
 
   const teamMatches = fixtures
     .filter((f) => f.home?.id === team.id || f.away?.id === team.id)
-    .sort((a, b) => b.dateLocal.localeCompare(a.dateLocal)); // récent → ancien
+    .sort((a, b) => b.dateLocal.localeCompare(a.dateLocal)); // most recent → oldest
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -67,14 +69,14 @@ export default function MatchDrawer({ team, fixtures, onClose }: MatchDrawerProp
   const sideName = (f: SlimFixture, side: "home" | "away") =>
     (side === "home" ? f.home?.name : f.away?.name) ??
     (side === "home" ? f.homeLabel : f.awayLabel) ??
-    "À déterminer";
+    "TBD";
 
   return (
     <div
       className="fixed inset-0 z-50"
       role="dialog"
       aria-modal="true"
-      aria-label={`Matchs de ${team.name}`}
+      aria-label={`Matches for ${team.name}`}
     >
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
@@ -84,26 +86,31 @@ export default function MatchDrawer({ team, fixtures, onClose }: MatchDrawerProp
         className="absolute inset-x-0 bottom-0 max-h-[80vh] rounded-t-2xl overflow-y-auto bg-neutral-900 border-t border-neutral-700 shadow-2xl
                    md:inset-y-0 md:right-0 md:left-auto md:bottom-auto md:h-full md:max-h-none md:w-[420px] md:rounded-none md:border-t-0 md:border-l"
       >
-        {/* En-tête */}
+        {/* Header */}
         <div className="sticky top-0 z-10 flex items-center gap-3 px-5 py-4 bg-neutral-900/95 backdrop-blur border-b border-neutral-800">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-xs font-bold text-neutral-400">
-            {initials(team.name)}
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-neutral-800 text-xs font-bold text-neutral-400">
+            {flag ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={flag} alt="" className="h-full w-full object-cover" />
+            ) : (
+              initials(team.name)
+            )}
           </span>
           <h2 className="text-lg font-bold flex-1">{team.name}</h2>
           <button
             onClick={onClose}
-            aria-label="Fermer"
+            aria-label="Close"
             className="h-9 w-9 rounded-full text-neutral-400 hover:text-white hover:bg-neutral-800 text-xl leading-none"
           >
             ×
           </button>
         </div>
 
-        {/* Liste des matchs, du plus récent au plus ancien */}
+        {/* Match list, most recent to oldest */}
         <div className="px-5 py-4 space-y-6">
           {teamMatches.length === 0 && (
             <p className="text-neutral-500 text-sm">
-              Aucun match trouvé pour cette équipe dans la phase finale.
+              No matches found for this team in the tournament.
             </p>
           )}
           {teamMatches.map((f) => {
@@ -116,7 +123,7 @@ export default function MatchDrawer({ team, fixtures, onClose }: MatchDrawerProp
                 className="rounded-xl border border-neutral-800 bg-neutral-950/60 p-4"
               >
                 <p className="text-xs uppercase tracking-wider text-neutral-500 mb-2">
-                  {ROUND_LABEL_FR[f.round] ?? f.round}
+                  {ROUND_LABEL_EN[f.round] ?? f.round}
                 </p>
                 <div className="flex items-center gap-2 text-sm font-medium flex-wrap">
                   <span
@@ -152,11 +159,11 @@ export default function MatchDrawer({ team, fixtures, onClose }: MatchDrawerProp
 
                 {upcoming ? (
                   <p className="text-sm text-neutral-300 mt-3">
-                    Coup d&apos;envoi : {formatKickoff(f.dateLocal)}{" "}
-                    <span className="text-neutral-500">(heure du stade)</span>
+                    Kickoff: {formatKickoff(f.dateLocal)}{" "}
+                    <span className="text-neutral-500">(stadium local time)</span>
                   </p>
                 ) : ev === "loading" || ev === undefined ? (
-                  <div className="mt-3 space-y-2" aria-label="Chargement des événements">
+                  <div className="mt-3 space-y-2" aria-label="Loading events">
                     <div className="skeleton-line h-3 w-3/4" />
                     <div className="skeleton-line h-3 w-2/3" />
                     <div className="skeleton-line h-3 w-4/5" />
