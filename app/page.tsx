@@ -8,8 +8,10 @@ import {
   computeTeamStates,
 } from "@/lib/bracket";
 import { FixturesPayload, SlimFixture, SlimTeam, isLive } from "@/lib/types";
+import { kickoffInstant } from "@/lib/format";
 import BracketRadial from "@/components/BracketRadial";
 import MatchDrawer from "@/components/MatchDrawer";
+import NextMatchCountdown from "@/components/NextMatchCountdown";
 
 const POLL_MS = 90_000; // only polls while at least one match is live
 
@@ -40,12 +42,19 @@ export default function Home() {
     fetchFixtures();
   }, [fetchFixtures]);
 
-  // Light polling: only while a match is in progress
+  // Light polling: while a match is in progress, or overdue to start (kickoff
+  // time passed but our last snapshot still says "NS" — without this, a
+  // match's very first live tick would never be picked up).
   useEffect(() => {
     const timer = setInterval(() => {
-      if (fixturesRef.current.some((f) => isLive(f.status))) {
-        fetchFixtures();
-      }
+      const now = Date.now();
+      const shouldPoll = fixturesRef.current.some((f) => {
+        if (isLive(f.status)) return true;
+        if (f.status !== "NS") return false;
+        const at = kickoffInstant(f.dateLocal);
+        return at != null && at <= now;
+      });
+      if (shouldPoll) fetchFixtures();
     }, POLL_MS);
     return () => clearInterval(timer);
   }, [fetchFixtures]);
@@ -74,6 +83,8 @@ export default function Home() {
           </p>
         )}
       </header>
+
+      <NextMatchCountdown fixtures={fixtures} />
 
       <div className="flex-1">
         <BracketRadial

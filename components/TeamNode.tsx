@@ -83,10 +83,14 @@ export default function TeamNode({
         >
           {initials(team.name)}
         </text>
+        {/* xlinkHref en plus de href : Safari iOS ignore silencieusement l'attribut
+            href seul sur un <image> SVG dans certains contextes (bug WebKit connu),
+            l'image ne charge jamais et les initiales du dessous restent visibles. */}
         {url && (
-          /* Cover plein bord : l'image remplit tout le cercle, rognée au clip */
+          // Cover plein bord : l'image remplit tout le cercle, rognée au clip
           <image
             href={url}
+            xlinkHref={url}
             x={x - r}
             y={y - r}
             width={r * 2}
