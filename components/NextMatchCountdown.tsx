@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { SlimFixture, isLive } from "@/lib/types";
-import { kickoffInstant } from "@/lib/format";
+import { realKickoffInstant } from "@/lib/format";
 
 interface NextMatchCountdownProps {
   fixtures: SlimFixture[];
@@ -55,7 +55,7 @@ export default function NextMatchCountdown({ fixtures }: NextMatchCountdownProps
   let next: { fixture: SlimFixture; at: number } | null = null;
   for (const f of fixtures) {
     if (f.status !== "NS") continue;
-    const at = kickoffInstant(f.dateLocal);
+    const at = realKickoffInstant(f.dateLocal, f.stadiumId);
     if (at == null || at <= now) continue;
     if (next == null || at < next.at) next = { fixture: f, at };
   }

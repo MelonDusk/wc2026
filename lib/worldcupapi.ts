@@ -135,6 +135,10 @@ function normalizeGame(raw: any): NormalizedGame | null {
       id,
       round,
       dateLocal: parseLocalDate(pick(raw, ["local_date", "date"])) ?? "",
+      stadiumId: (() => {
+        const s = pick(raw, ["stadium_id"]);
+        return s == null ? null : String(s);
+      })(),
       status,
       elapsed,
       home,

@@ -12,6 +12,8 @@ export interface SlimFixture {
   round: string; // "Round of 32" | "Round of 16" | "Quarter-finals" | "Semi-finals" | "3rd Place Final" | "Final"
   /** Heure locale du stade, SANS fuseau : "2026-07-11T18:00" (local_date de l'API, format US MM/DD/YYYY) */
   dateLocal: string;
+  /** id numérique brut de l'API — voir lib/venues.ts pour résoudre le fuseau réel */
+  stadiumId: string | null;
   status: FixtureStatus;
   elapsed: number | null;
   /** null si l'équipe n'est pas encore connue (team_id "0") → utiliser le label */

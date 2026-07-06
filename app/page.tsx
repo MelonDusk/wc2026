@@ -8,12 +8,29 @@ import {
   computeTeamStates,
 } from "@/lib/bracket";
 import { FixturesPayload, SlimFixture, SlimTeam, isLive } from "@/lib/types";
-import { kickoffInstant } from "@/lib/format";
+import { realKickoffInstant } from "@/lib/format";
 import BracketRadial from "@/components/BracketRadial";
 import MatchDrawer from "@/components/MatchDrawer";
 import NextMatchCountdown from "@/components/NextMatchCountdown";
 
 const POLL_MS = 90_000; // only polls while at least one match is live
+
+/**
+ * Mobile Safari/Chrome pin `position: fixed` elements to the LAYOUT
+ * viewport, not the VISUAL one — so if the page is pinch-zoomed in when a
+ * flag is tapped, the fixed-position drawer opens looking zoomed/misaligned.
+ * Forcing maximum-scale=1 for a moment snaps the visual viewport back to
+ * 100%, then the original viewport meta is restored so pinch-zoom keeps
+ * working normally afterwards.
+ */
+function resetMobileZoom() {
+  const meta = document.querySelector('meta[name="viewport"]');
+  if (!meta) return;
+  const original = meta.getAttribute("content");
+  if (!original) return;
+  meta.setAttribute("content", `${original}, maximum-scale=1`);
+  window.setTimeout(() => meta.setAttribute("content", original), 350);
+}
 
 export default function Home() {
   const [fixtures, setFixtures] = useState<SlimFixture[]>([]);
@@ -51,7 +68,7 @@ export default function Home() {
       const shouldPoll = fixturesRef.current.some((f) => {
         if (isLive(f.status)) return true;
         if (f.status !== "NS") return false;
-        const at = kickoffInstant(f.dateLocal);
+        const at = realKickoffInstant(f.dateLocal, f.stadiumId);
         return at != null && at <= now;
       });
       if (shouldPoll) fetchFixtures();
@@ -64,6 +81,11 @@ export default function Home() {
     [fixtures]
   );
   const states = useMemo(() => computeTeamStates(fixtures), [fixtures]);
+
+  const handleTeamSelect = useCallback((team: SlimTeam) => {
+    resetMobileZoom();
+    setSelectedTeam(team);
+  }, []);
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-6 flex flex-col min-h-screen">
@@ -90,7 +112,7 @@ export default function Home() {
         <BracketRadial
           matches={resolved}
           states={states}
-          onTeamSelect={setSelectedTeam}
+          onTeamSelect={handleTeamSelect}
         />
       </div>
 
