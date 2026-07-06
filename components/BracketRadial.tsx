@@ -87,7 +87,7 @@ export default function BracketRadial({
   const layout = useMemo(() => {
     return matches.map((m) => {
       const nodeR = NODE_R[m.roundName] ?? 20;
-      const deltaDeg = ((nodeR + 6) / (m.radius * R_MAX)) * (180 / Math.PI);
+      const deltaDeg = ((nodeR + 14) / (m.radius * R_MAX)) * (180 / Math.PI);
       const homeAngle = m.angle - deltaDeg;
       const awayAngle = m.angle + deltaDeg;
       const homePos = polarToXY(homeAngle, m.radius, CX, CY, R_MAX);
@@ -110,6 +110,7 @@ export default function BracketRadial({
     <svg
       viewBox={`0 0 ${VB} ${VB}`}
       xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       role="img"
       aria-label="World Cup 2026 final bracket"
       className="w-full h-auto select-none"
@@ -193,6 +194,7 @@ export default function BracketRadial({
           déposer le fichier dans public/trophy-glow.png pour qu'il s'affiche. ---- */}
       <image
         href="/trophy-glow.png"
+        xlinkHref="/trophy-glow.png"
         x={CX - GLOW_SIZE / 2}
         y={CY - GLOW_SIZE / 2}
         width={GLOW_SIZE}
