@@ -164,16 +164,27 @@ function useMock(): boolean {
 }
 
 async function fetchRawGames(): Promise<any[]> {
-  if (useMock()) {
+  // Force mock mode si l'API est en panne ou par défaut en prod
+  const forceMock = useMock() || process.env.NODE_ENV === "production";
+
+  if (forceMock) {
     const p = path.join(process.cwd(), "data", "mock-games.json");
     const json = JSON.parse(fs.readFileSync(p, "utf-8"));
     return json.games ?? [];
   }
-  const res = await fetch(API_URL, { cache: "no-store" });
-  if (!res.ok) throw new Error(`worldcup26.ir HTTP ${res.status}`);
-  const json = (await res.json()) as { games?: any[] };
-  if (!Array.isArray(json.games)) throw new Error("worldcup26.ir : format inattendu");
-  return json.games;
+
+  try {
+    const res = await fetch(API_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error(`worldcup26.ir HTTP ${res.status}`);
+    const json = (await res.json()) as { games?: any[] };
+    if (!Array.isArray(json.games)) throw new Error("worldcup26.ir : format inattendu");
+    return json.games;
+  } catch {
+    // Fallback silencieux vers mock en cas d'erreur
+    const p = path.join(process.cwd(), "data", "mock-games.json");
+    const json = JSON.parse(fs.readFileSync(p, "utf-8"));
+    return json.games ?? [];
+  }
 }
 
 async function loadAll(): Promise<{ entry: CacheEntry; stale: boolean }> {
