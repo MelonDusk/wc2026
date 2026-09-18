@@ -169,11 +169,19 @@ async function fetchRawGames(): Promise<any[]> {
     const json = JSON.parse(fs.readFileSync(p, "utf-8"));
     return json.games ?? [];
   }
-  const res = await fetch(API_URL, { cache: "no-store" });
-  if (!res.ok) throw new Error(`worldcup26.ir HTTP ${res.status}`);
-  const json = (await res.json()) as { games?: any[] };
-  if (!Array.isArray(json.games)) throw new Error("worldcup26.ir : format inattendu");
-  return json.games;
+  try {
+    const res = await fetch(API_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error(`worldcup26.ir HTTP ${res.status}`);
+    const json = (await res.json()) as { games?: any[] };
+    if (!Array.isArray(json.games)) throw new Error("worldcup26.ir : format inattendu");
+    return json.games;
+  } catch (err) {
+    // Fallback automatique : si l'API tombe, utiliser les données mockées
+    console.warn(`[worldcupapi] API indisponible, fallback vers mock-games.json`, err);
+    const p = path.join(process.cwd(), "data", "mock-games.json");
+    const json = JSON.parse(fs.readFileSync(p, "utf-8"));
+    return json.games ?? [];
+  }
 }
 
 async function loadAll(): Promise<{ entry: CacheEntry; stale: boolean }> {
